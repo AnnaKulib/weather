@@ -1,33 +1,33 @@
-<article class="example">
-  <h1>HTML-фрагменты</h1>
+<div class="container">
+  <input class="search" type="text" />
+  <div class="location">
+    <h1 class="location-timezone">Timezone</h1>
 
-  <!-- Путь к изображениям из HTML-фрагмента такой, как из файла index.html -->
-  <img src="images/demo.jpg" alt="" width="320" />
-  <p>
-    Плагин
-    <a
-      href="https://github.com/posthtml/posthtml-include"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      posthtml-include
-    </a>
-    позволяет добавлять в HTML-файлы страниц код из других HTML-файлов (фрагментов). Фрагменты
-    хранятся в папке
-    <code>src/partials</code>. Добавление происходит при компиляции файлов страниц, например
-    <code>index.html</code>.
-  </p>
-
-  <p>
-    Этот файл <code>example.html</code> &mdash; пример такого фрагмента, с разметкой определённой
-    части главной страницы. Это очень удобно при командной разработке на студенческих проектах,
-    когда в одном HTML-файле пишет несколько человек сразу.
-  </p>
-
-  <p>
-    Синтаксис добавление фрагмента в главный файл:
-    <code> &lt;include src="./partials/имя-файла.html"&gt;&lt;/include&gt; </code>
-  </p>
-
-  <div class="background"></div>
-</article>
+    <canvas id="icon1" width="128" height="128"></canvas>
+  </div>
+  <div class="temperature">
+    <div class="digree-box">
+      <h2 class="temperature-degree">20</h2>
+      <span>&deg;C</span>
+    </div>
+    <img class="icon" src="#" alt="weather icon" width="50px" height="50px" />
+    <span class="temperature-description">cold</span>
+  </div>
+  <div class="date-container date">
+    <div class="date__day"></div>
+    <div class="date__month-time">
+      <p class="date__month"></p>
+      <p class="date__time"></p>
+    </div>
+    <div class="date__sun">
+      <div class="date__sunrise">
+        <!-- <img class="date__sunrise--icon" src="./img/sunrise.png" alt="" /> -->
+        <p class="date__sunrise--time"></p>
+      </div>
+      <div class="date__sunset">
+        <!-- <img class="date__sunset--icon" src="./img/sunset.png" alt="" /> -->
+        <p class="date__sunset--time"></p>
+      </div>
+    </div>
+  </div>
+</div>

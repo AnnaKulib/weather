@@ -20,7 +20,7 @@ function onEntry(entries, observer) {
             page += 1;
             markupImages(page);
         }
-        console.log(entry)
+        // console.log(entry)
     })
 }
 
@@ -33,10 +33,40 @@ imageApiService.searchQuery = 'city';
 function renderImages(images) {
 
     imageList.insertAdjacentHTML('beforeend', markup(images));
+
+    const imagesAll = document.querySelectorAll('img');
+    lazyLoad(imagesAll);
+    console.log(imagesAll);
 };
+
+function lazyLoad(targets) {
+    const option = {
+        rootMargin: '100px'
+    }
+    const onEntry = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const images = entry.target;
+                console.log(images);
+                const src = images.dataset.lazy;
+                images.src = src;
+                
+                observer.unobserve(images);
+            }
+            
+        })
+    }
+    
+    const io = new IntersectionObserver(onEntry, option);
+    targets.forEach(target => {
+        io.observe(target);
+    })
+
+}
+
 
 async function markupImages(page) {
     const data = await imageApiService.getImages(page);
-    console.log(data.hits)
+    // console.log(data.hits)
     renderImages(data.hits);
 }

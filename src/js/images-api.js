@@ -7,7 +7,7 @@ export default class ImageApiService {
 
     async getImages(page) {
         // console.log(this);
-        const url = `${BASE_URL}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=5&page=${page}`;
+        const url = `${BASE_URL}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=10&page=${page}`;
 
         try {
     const response = await fetch(url);

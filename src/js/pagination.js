@@ -5,9 +5,9 @@ import markup from './templates/images';
 import ImageApiService from './images-api';
 
 const imageApiService = new ImageApiService();
+import { getRefs } from './refs';
 
-const imageList = document.querySelector('.image-list');
-const form = document.querySelector('.search-form');
+const { form, imageList } = getRefs();
 
 form.addEventListener('submit', onFormSubmit);
 

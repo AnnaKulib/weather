@@ -11,9 +11,7 @@ export default class ImageApiService {
 
         try {
     const response = await fetch(url);
-            // this.incremenPage();
-// console.log(response);
-            // console.log(response.data);
+    
             return await response.json();
 
             

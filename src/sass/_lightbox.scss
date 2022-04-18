@@ -1,0 +1,33 @@
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: 100px auto 0;
+}
+
+.gallery-link {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    flex-basis: calc(33.33333% - 20px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 10px;
+    color: #000;
+
+}
